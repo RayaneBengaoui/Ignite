@@ -18,7 +18,6 @@ const getCurrentDay = () => {
   } else {
     return day;
   }
-  d;
 };
 
 //Current day/month/year
