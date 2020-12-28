@@ -7,20 +7,22 @@ import GameDetail from "../components/GameDetail";
 //Styling and Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
+  const pathId = location.pathname.split("/")[2];
 
   useEffect(() => {
     dispatch(loadGames());
   }, [dispatch]);
   //Get the data from the state
   const { popular, newGames, upcoming } = useSelector((state) => state.games);
-  const { game, screen } = useSelector((state) => state.detail);
 
   return (
     <GameList>
-      {Object.entries(game).length !== 0 && <GameDetail />}
+      {pathId && <GameDetail />}
       <h2>Upcoming Games</h2>
 
       <Games>

@@ -20,10 +20,9 @@ const GameDetail = () => {
           <Info>
             <h3>Platforms</h3>
             <Platforms>
-              {game.platforms &&
-                game.platforms.map((data) => (
-                  <h3 key={data.platform.id}>{data.platform.name}</h3>
-                ))}
+              {game.platforms.map((data) => (
+                <h3 key={data.platform.id}>{data.platform.name}</h3>
+              ))}
             </Platforms>
           </Info>
         </Stats>
@@ -34,10 +33,9 @@ const GameDetail = () => {
           <p>{game.description_raw}</p>
         </Description>
         <div className="gallery">
-          {screen.results &&
-            screen.results.map((screen) => (
-              <img src={screen.image} key={screen.id} alt="game screenshot" />
-            ))}
+          {screen.results.map((screen) => (
+            <img src={screen.image} key={screen.id} alt="game screenshot" />
+          ))}
         </div>
       </Detail>
     </CardShadow>
