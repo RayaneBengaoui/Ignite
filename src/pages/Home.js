@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadGames } from "../actions/gamesAction";
 //Components
 import Game from "../components/Game";
+import GameDetail from "../components/GameDetail";
 //Styling and Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -15,10 +16,13 @@ const Home = () => {
   }, [dispatch]);
   //Get the data from the state
   const { popular, newGames, upcoming } = useSelector((state) => state.games);
+  const { game, screen } = useSelector((state) => state.detail);
 
   return (
     <GameList>
+      {Object.entries(game).length !== 0 && <GameDetail />}
       <h2>Upcoming Games</h2>
+
       <Games>
         {upcoming.map((game) => (
           <Game
