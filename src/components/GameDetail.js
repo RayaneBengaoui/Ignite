@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 
 import { smallImage } from "../util";
 
-const GameDetail = () => {
+const GameDetail = ({ pathId }) => {
   const history = useHistory();
   //Exit Detail
   const exitDetailHandler = (e) => {
@@ -24,10 +24,10 @@ const GameDetail = () => {
     <>
       {!isLoading && (
         <CardShadow className="shadow" onClick={exitDetailHandler}>
-          <Detail>
+          <Detail layoutId={pathId}>
             <Stats>
               <div className="rating">
-                <h3>{game.name}</h3>
+                <motion.h3 layoutId={`title ${pathId}`}>{game.name}</motion.h3>
                 <p>Rating : {game.rating}</p>
               </div>
               <Info>
@@ -40,9 +40,10 @@ const GameDetail = () => {
               </Info>
             </Stats>
             <Media>
-              <img
+              <motion.img
                 src={smallImage(game.background_image, 1280)}
                 alt="game background"
+                layoutId={`image ${pathId}`}
               />
             </Media>
             <Description>
@@ -72,6 +73,7 @@ const CardShadow = styled(motion.div)`
   position: fixed;
   right: 0;
   left: 0;
+  z-index: 10;
   &::-webkit-scrollbar {
     width: 0.5rem;
   }
