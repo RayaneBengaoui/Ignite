@@ -49,6 +49,10 @@ const GlobalStyles = createGlobalStyle`
         color: #333;
     }
 
+    img{
+        display: block;
+    }
+
 `;
 
 export default GlobalStyles;
