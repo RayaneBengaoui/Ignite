@@ -49,8 +49,17 @@ const StyledNav = styled(motion.nav)`
   padding: 3rem 5rem;
   text-align: center;
 
+  .search {
+    @media screen and (max-width: 700px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
   input {
     width: 30%;
+    min-width: 15rem;
     font-size: 1.5rem;
     padding: 0.5rem;
     border: none;

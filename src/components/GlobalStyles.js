@@ -30,12 +30,18 @@ const GlobalStyles = createGlobalStyle`
         font-family : 'Abril Fatface', cursive;
         font-weight: lighter;
         color: #333;
+        width : 100%;
+        @media screen and (max-width: 700px) {
+    text-align:center;
+  }
+       
     }
 
     h3{
         font-size: 1.3rem;
         color: #333;
         padding : 1.5rem 0rem;
+       
     }
 
     p{
