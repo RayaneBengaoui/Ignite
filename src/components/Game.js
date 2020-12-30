@@ -52,6 +52,11 @@ const StyledGame = styled(motion.div)`
     width: 100%;
     height: 40vh;
     object-fit: cover;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      width: 105%;
+    }
   }
 `;
 
